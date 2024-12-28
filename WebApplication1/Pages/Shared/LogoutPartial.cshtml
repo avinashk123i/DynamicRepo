@@ -1,0 +1,16 @@
+﻿@if(User.Identity.IsAuthenticated){
+
+    <form method="post" asp-page="/Logout">
+        <div>
+            <h1>Welcome @User.Identity.Name</h1>
+            <button class="btn btn-link" type="submit">Logout</button>
+        </div>
+</form>
+}
+else
+{
+    <div>
+        <a class="btn btn-link" asp-page="/Login">Login</a>
+    </div>
+    
+}

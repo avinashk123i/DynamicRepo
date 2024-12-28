@@ -1,0 +1,28 @@
+﻿@page
+@model WebApplication1.Pages.HumanResourceModel
+@{
+}
+
+<div>
+    <h1>Welcome to HR department</h1>
+    <table>
+
+        <tr>
+            <td>Date</td>
+            <td>TemperatureC</td>
+            <td>TemperatureF</td>
+            <td>Summary</td>
+        </tr>
+        <tr>
+            @foreach (var items in Model.WeatherForecasts)
+            {
+                <td>@items.Date.ToString()</td>
+                <td>@items.TemperatureC.ToString()</td>
+                <td>@items.TemperatureF.ToString()</td>
+                <td>@items.Summary.ToString()</td>
+
+
+            }
+        </tr>
+    </table>
+</div>
