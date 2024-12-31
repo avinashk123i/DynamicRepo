@@ -1,0 +1,9 @@
+C:\Users\AK108412\source\repos\DesignProject\WebApplication4\obj\Release\net8.0\WebApplication4.csproj.AssemblyReference.cache
+C:\Users\AK108412\source\repos\DesignProject\WebApplication4\obj\Release\net8.0\WebApplication4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AK108412\source\repos\DesignProject\WebApplication4\obj\Release\net8.0\WebApplication4.AssemblyInfoInputs.cache
+C:\Users\AK108412\source\repos\DesignProject\WebApplication4\obj\Release\net8.0\WebApplication4.AssemblyInfo.cs
+C:\Users\AK108412\source\repos\DesignProject\WebApplication4\obj\Release\net8.0\WebApplication4.csproj.CoreCompileInputs.cache
+C:\Users\AK108412\source\repos\DesignProject\WebApplication4\obj\Release\net8.0\WebApplication4.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\AK108412\source\repos\DesignProject\WebApplication4\obj\Release\net8.0\WebApplication4.RazorAssemblyInfo.cache
+C:\Users\AK108412\source\repos\DesignProject\WebApplication4\obj\Release\net8.0\WebApplication4.RazorAssemblyInfo.cs
+C:\Users\AK108412\source\repos\DesignProject\WebApplication4\obj\Release\net8.0\WebApplication4.sourcelink.json

@@ -1,0 +1,135 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Contracts.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "Services.Abstractions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Contracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.Abstractions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.Abstractions.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Contracts/1.0.0": {
+      "type": "project",
+      "path": "../Contracts/Contracts.csproj",
+      "msbuildProject": "../Contracts/Contracts.csproj"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Services.Abstractions/1.0.0": {
+      "type": "project",
+      "path": "../Services.Abstractions/Services.Abstractions.csproj",
+      "msbuildProject": "../Services.Abstractions/Services.Abstractions.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Contracts >= 1.0.0",
+      "Domain >= 1.0.0",
+      "Services.Abstractions >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\AK108412\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\AK108412\\source\\repos\\DesignProject\\Service\\Service.csproj",
+      "projectName": "Service",
+      "projectPath": "C:\\Users\\AK108412\\source\\repos\\DesignProject\\Service\\Service.csproj",
+      "packagesPath": "C:\\Users\\AK108412\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\AK108412\\source\\repos\\DesignProject\\Service\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\AK108412\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nexus.systems.aristocrat.com/repository/nuget-releases/": {},
+        "https://nexus.systems.aristocrat.com/repository/nuget-snapshots/": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "C:\\Users\\AK108412\\source\\repos\\DesignProject\\Contracts\\Contracts.csproj": {
+              "projectPath": "C:\\Users\\AK108412\\source\\repos\\DesignProject\\Contracts\\Contracts.csproj"
+            },
+            "C:\\Users\\AK108412\\source\\repos\\DesignProject\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\AK108412\\source\\repos\\DesignProject\\Domain\\Domain.csproj"
+            },
+            "C:\\Users\\AK108412\\source\\repos\\DesignProject\\Services.Abstractions\\Services.Abstractions.csproj": {
+              "projectPath": "C:\\Users\\AK108412\\source\\repos\\DesignProject\\Services.Abstractions\\Services.Abstractions.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -25,7 +25,7 @@ namespace WebApplication2.Controllers
         {
             if (credentials.UserName == "Avinash" && credentials.Password == "123")
             {
-                var claims = new List<Claim>() { new Claim(ClaimTypes.Name, credentials.UserName) };
+                var claims = new List<Claim>() { new Claim(ClaimTypes.Name, credentials.UserName) , new Claim("iss", ""), new Claim("aud", "")};
 
                 var claimIdentiy = new ClaimsIdentity(claims, "MyCookieAuth");
 

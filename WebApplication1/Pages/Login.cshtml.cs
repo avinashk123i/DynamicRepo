@@ -28,6 +28,7 @@ namespace WebApplication1.Pages
                 var ispersistent = new AuthenticationProperties()
                 {
                     IsPersistent = Credentials.isPersistent,
+                    
                 };
 
                 await HttpContext.SignInAsync("MyCookieAuth", claimPrincipal, ispersistent);

@@ -1,0 +1,16 @@
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\bin\Release\net8.0\Services.Abstractions.deps.json
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\bin\Release\net8.0\Services.Abstractions.dll
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\bin\Release\net8.0\Services.Abstractions.pdb
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\bin\Release\net8.0\Contracts.dll
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\bin\Release\net8.0\Contracts.pdb
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\obj\Release\net8.0\Services.Abstractions.csproj.AssemblyReference.cache
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\obj\Release\net8.0\Services.Abstractions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\obj\Release\net8.0\Services.Abstractions.AssemblyInfoInputs.cache
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\obj\Release\net8.0\Services.Abstractions.AssemblyInfo.cs
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\obj\Release\net8.0\Services.Abstractions.csproj.CoreCompileInputs.cache
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\obj\Release\net8.0\Services.Abstractions.sourcelink.json
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\obj\Release\net8.0\Services.Abstractions.csproj.CopyComplete
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\obj\Release\net8.0\Services.Abstractions.dll
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\obj\Release\net8.0\refint\Services.Abstractions.dll
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\obj\Release\net8.0\Services.Abstractions.pdb
+C:\Users\AK108412\source\repos\DesignProject\Services.Abstractions\obj\Release\net8.0\ref\Services.Abstractions.dll

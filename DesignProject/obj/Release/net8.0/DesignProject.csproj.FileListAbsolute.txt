@@ -132,3 +132,4 @@ C:\Users\AK108412\source\repos\DesignProject\DesignProject\obj\Release\net8.0\re
 C:\Users\AK108412\source\repos\DesignProject\DesignProject\obj\Release\net8.0\DesignProject.pdb
 C:\Users\AK108412\source\repos\DesignProject\DesignProject\obj\Release\net8.0\DesignProject.genruntimeconfig.cache
 C:\Users\AK108412\source\repos\DesignProject\DesignProject\obj\Release\net8.0\ref\DesignProject.dll
+C:\Users\AK108412\source\repos\DesignProject\DesignProject\obj\Release\net8.0\DesignProject.sourcelink.json

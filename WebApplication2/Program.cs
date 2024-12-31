@@ -18,8 +18,6 @@ builder.Services.AddAuthentication().AddJwtBearer(authenticationScheme: JwtBeare
         ValidateIssuer = false,
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("abccccccccccccccccccccccccccccccccc"))
-
-
     };
 });
 

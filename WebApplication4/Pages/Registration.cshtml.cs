@@ -15,11 +15,7 @@ namespace WebApplication4.Pages
         private readonly UserManager<IdentityUser> _userManager;
         private readonly EntityMaterializerSource
         
-        public void OnGet()
-        {
-
-        }
-
+        
         public async Task OnPost()
         {
 

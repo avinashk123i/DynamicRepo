@@ -1,0 +1,16 @@
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\bin\Release\net8.0\Infrastructure.deps.json
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\bin\Release\net8.0\Infrastructure.dll
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\bin\Release\net8.0\Infrastructure.pdb
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\bin\Release\net8.0\Domain.dll
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\bin\Release\net8.0\Domain.pdb
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\obj\Release\net8.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\obj\Release\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\obj\Release\net8.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\obj\Release\net8.0\Infrastructure.AssemblyInfo.cs
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\obj\Release\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\obj\Release\net8.0\Infrastructure.sourcelink.json
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\obj\Release\net8.0\Infrastructure.csproj.CopyComplete
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\obj\Release\net8.0\Infrastructure.dll
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\obj\Release\net8.0\refint\Infrastructure.dll
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\obj\Release\net8.0\Infrastructure.pdb
+C:\Users\AK108412\source\repos\DesignProject\Infrastructure\obj\Release\net8.0\ref\Infrastructure.dll
