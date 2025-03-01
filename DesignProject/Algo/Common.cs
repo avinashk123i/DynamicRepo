@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.Json;
+﻿using Azure.Core.GeoJson;
+using DesignProject.DesignPatterns.Behavior.Command;
+using Microsoft.EntityFrameworkCore.Storage.Json;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections;
@@ -7,6 +9,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +22,8 @@ namespace DesignProject.Algo
     {
         public void GetFibonicciSeries(int n)
         {
+
+
             int first = 0;
             int second = 1;
             int count = 2;
@@ -67,6 +73,63 @@ namespace DesignProject.Algo
             Console.WriteLine($"{a}{b}");
         }
 
+
+        public void RotateArray(int position)
+        {
+            // by 4 places
+            int[] arr1 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+            //   
+            //   
+
+
+            reverse(arr1, 0, arr1.Length - 1);
+
+            //reverse(arr1, 0, position - 1);
+
+            //reverse(arr1, position, arr1.Length - 1);
+
+            reverse(arr1, arr1.Length - position, arr1.Length - 1);
+
+            reverse(arr1, 0, arr1.Length - position - 1);
+
+        }
+
+        public int[] reverse(int[] arr, int start, int end)
+        {
+
+            while (start < end)
+            {
+                (arr[start], arr[end]) = (arr[end], arr[start]);
+                start++; end--;
+            }
+            return arr;
+        }
+
+
+
+        public int[] ReverseWithDiff()
+        {
+            int[] arr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
+
+            int start = 0;
+            int end = arr.Length - 1;
+
+            int temp = 0;
+            while (start < end)
+            {
+                temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+
+
+                start++;
+                end--;
+            }
+
+            return arr;
+        }
+
+
         public void CountOccurence(int number, int data)
         {
             // 13839 / 10 = 1383
@@ -77,10 +140,8 @@ namespace DesignProject.Algo
             {
                 int n = data % 10;
 
-                if (n == number)
-                {
-                    count++;
-                }
+
+                count++;
                 data = data / 10;
             }
 
@@ -90,7 +151,6 @@ namespace DesignProject.Algo
         public void ReverseNumber(int number)
         {
             int n = 0;
-
             // 13839
             while (number > 0)
             {
@@ -136,36 +196,32 @@ namespace DesignProject.Algo
 
         }
 
-        public void Reverse3DArray(int[,,] array3D)
+        public void Reverse3DArray()
         {
-            // { { {1,2}, {2,9}}, {{1,2}, {3,9}}}
 
-            for (int i = array3D.GetLength(0) - 1; i >= 0; i--)
+            int[,,] arr = new int[,,]
             {
-                for (int j = array3D.GetLength(1) - 1; j >= 0; j--)
                 {
-                    for (int k = array3D.GetLength(2) - 1; k >= 0; k--)
-                    {
-                        Console.Write(array3D[i, j, k] + " ");
-                    }
-                    Console.WriteLine();
+                   {1,2,3,4 }
+                },
+                {
+                   {5,6,7,8 }
                 }
-                Console.WriteLine();
+            };
+
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    for (int k = 0; k < arr.GetLength(2); k++)
+                    {
+                        Console.WriteLine(arr[arr.GetLength(0) - i - 1, arr.GetLength(1) - 1 - j, arr.GetLength(2) - 1 - k]); ;
+                    }
+                }
             }
 
-            for (int i = 0; i < array3D.GetLength(0); i++)
-            {
-                for (int j = 0; j < array3D.GetLength(1); j++)
-                {
-                    for (int k = 0; k < array3D.GetLength(2); k++)
-                    {
-                        Console.Write(" " + array3D[(array3D.GetLength(0) - 1 - i), (array3D.GetLength(1) - 1 - j), (array3D.GetLength(2) - 1 - k)]);
-                    }
 
-                    Console.WriteLine();
-                }
-                Console.WriteLine();
-            }
+
         }
 
         public void JaggedArray()
@@ -193,18 +249,26 @@ namespace DesignProject.Algo
 
             foreach (var item in arr)
             {
-                if (item > max)
-                {
-                    max = item;
-                }
+                max = item > max ? item : max;
             }
 
             Console.WriteLine("Max value is" + max);
         }
 
+        public void ReverseArray(int[] arr, int start, int end)
+        {
+            while (start < end)
+            {
+                (arr[start], arr[end]) = (arr[end], arr[start]);
+                start++;
+                end--;
+            }
+        }
+
+
         public void ReverseArrayWithDiffTeq()
         {
-            int[] arr = new int[] { 1, 2, 3, 5, 6, 7, 8 };
+            int[] arr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8 };
 
             int start = arr[0];
             int end = arr[arr.Length - 1];
@@ -222,47 +286,43 @@ namespace DesignProject.Algo
 
         public void CountEvenIntegers()
         {
-            int[] value = { 1, 23, 45, 678 };
-            int cnt = 1;
-            int count = 0;
-            for (int i = 0; i < value.Length; i++)
+            int[] arr = new int[] { 12, 45, 456, 23 };
+            int count = 1;
+            int cnt = 0;
+            for (int i = 0; i <= arr.Length - 1; i++)
             {
-                while (value[i] > 0)
+                while (arr[i] != 0)
                 {
-                    value[i] = value[i] / 10;
-                    cnt++;
-                }
-
-                if (cnt % 2 == 0)
-                {
+                    arr[i] = arr[i] / 10;
                     count++;
                 }
 
+                if (count % 2 == 0)
+                {
+                    cnt++;
+                }
             }
 
-
-
-            Console.WriteLine(count);
+            Console.WriteLine(cnt);
         }
 
         public void FindMaxSumIn2DArray()
         {
-            int[,] Elements = { { 1, 2, 3, 4, 5 }, { 2, 3, 4, 5, 6 } };
+            int[,] elements = new int[,] { { 1, 2, 3, 5 }, { 4, 3, 3, 2 } };
 
             int max = 0;
-            for (int i = 0; i < Elements.GetLength(0); i++)
+            for (int i = 0; i < elements.GetLength(0); i++)
             {
                 int sum = 0;
-                for (int j = 0; j < Elements.GetLength(1); j++)
+                for (int j = 0; j < elements.GetLength(1); j++)
                 {
-                    sum += Elements[i, j];
+                    sum += elements[i, j];
                 }
 
                 if (sum > max)
                 {
                     max = sum;
                 }
-
             }
 
             Console.WriteLine(max);
@@ -300,6 +360,50 @@ namespace DesignProject.Algo
             return;
 
         }
+
+
+        public void FindAnagrams(string str1, string str2)
+        {
+
+            if (str1.Length != str2.Length)
+            {
+                Console.WriteLine("Not anagrams");
+                return;
+            }
+
+            Dictionary<char, int> dict1 = new Dictionary<char, int>();
+
+            foreach (var items in str1)
+            {
+                if (dict1.ContainsKey(items))
+                {
+                    dict1[items]++;
+                }
+                else
+                {
+                    dict1[items] = 1;
+                }
+            }
+
+
+            foreach (var items in str2)
+            {
+                if (!dict1.ContainsKey(items) || dict1[items] == 0)
+                {
+                    Console.WriteLine("Not anagrams");
+                    return;
+                }
+
+                dict1[items]--;
+            }
+
+
+            Console.WriteLine("Anagrams");
+            return;
+
+        }
+
+
 
         public int OrderAgnoisticBinary(int number, int[] sortedArray, int start, int end)
         {
@@ -356,7 +460,7 @@ namespace DesignProject.Algo
         {                         //     0,1,2,3,4,5,6,7,8
             int[] sortedArray = new int[] { 1, 2, 3, 4, 5, 7, 8, 9 };
 
-            
+
 
             int start = 0;
             int end = sortedArray.Length - 1;
@@ -439,8 +543,28 @@ namespace DesignProject.Algo
 
         }
 
+
+        public void getdata(ref int dd)
+        {
+
+        }
+
+        public class A
+        {
+
+        }
+
+
+        public class B : A
+        {
+
+        }
         public void FindCielingOrFloorOfCharacter(char character, bool findFloor)
         {
+            List<string> A = new List<string>();
+
+            A[0] = "ss";
+
             char[] sortedArray = new char[] { 'a', 'b', 'c' };
 
             int start = 0;
@@ -714,14 +838,14 @@ namespace DesignProject.Algo
             {
                 int last = arr.Length - i - 1;
 
-                arr = GetMaxArray(arr, i, last);
+                arr = GetMaxArray(arr, last, i);
 
             }
         }
 
         public void InsertionSort()
         {
-            int[] arr = new int[] { 5, 3, 4, 2, 1 };
+            int[] arr = new int[] { 5, 4, 2, 3, 1 };
 
             for (int i = 0; i < arr.Length; i++)
             {
@@ -730,8 +854,9 @@ namespace DesignProject.Algo
                     if (arr[j] < arr[j - 1])
                     {
                         int temp = arr[j];
-                        arr[j] = arr[j - 1];
-                        arr[j - 1] = temp;
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+
                     }
                     else
                     {
@@ -739,14 +864,77 @@ namespace DesignProject.Algo
                     }
                 }
             }
+        }
+
+
+        public int[] MergeSort(int[] arr)
+        {
+            if (arr.Length == 1)
+            {
+                return arr;
+            }
+            int mid = arr.Length / 2;
+
+            int[] left = MergeSort(arr[0..mid]);   // Sort left half
+            int[] right = MergeSort(arr[mid..arr.Length]);  // Sort right half
+
+            return Merge(left, right);   // Merge sorted halves
 
         }
 
-        public int[] GetMaxArray(int[] arr, int start, int end)
+        int[] Merge(int[] left, int[] right)
         {
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
+            int[] mix = new int[left.Length + right.Length];
+
+            int i = 0;
+            int j = 0;
+            int k = 0;
+
+            while(i < left.Length && j < right.Length)
+            {
+                if (left[i] < right[j])
+                {
+                    mix[k] = left[i];
+                    i++;
+                }
+                else
+                {
+                    mix[k] = right[j];
+                    j++;
+                }
+
+                k++;
+
+
+            }
+
+            while(i < left.Length)
+            {
+                mix[k] = left[i];
+                i++;
+                k++;
+            }
+
+            while (j < right.Length)
+            {
+                mix[k] = right[j];
+                j++;
+                k++;
+            }
+
+            return mix;
+
+        }
+
+        public int[] GetMaxArray(int[] arr, int end, int start)
+        {
+            int max = start;
+            for (int i = 0; i < end; i++)
+            { 
+              max = arr[max] < arr[i] ? i : max;  
+            }
+
+            (arr[end], arr[max]) = (arr[max], arr[end]);
 
             return arr;
         }
@@ -802,12 +990,50 @@ namespace DesignProject.Algo
 
                     Console.Write(" " + variable);
 
-                    variable *= 2;
+                    if (j < 3)
+                    {
+                        variable *= 2;
+                    }
 
                 }
 
                 Console.WriteLine();
             }
+
+
+
+            for (int i = 1; i <= 5; i++)
+            {
+
+                for (int j = 1; j <= 5 - i; j++)
+                {
+                    Console.Write(" ");
+                }
+
+                for (int k = 1; k <= i; k++)
+                {
+                    Console.Write(" *");
+                }
+
+                Console.WriteLine();
+
+            }
+
+            for (int i = 1; i <= 5; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(" ");
+                }
+
+                for (int k = 1; k <= 5 - i; k++)
+                {
+                    Console.Write(" *");
+                }
+
+                Console.WriteLine();
+            }
+
 
             for (int i = 1; i <= 2 * n; i++)
             {
@@ -887,6 +1113,72 @@ namespace DesignProject.Algo
         }
 
 
+
+        public void DifferentwaysForDuplicates()
+        {
+
+            //Using Linq
+            int[] array = { 1, 2, 3, 4, 5, 3, 2, 6 };
+            var duplicates = array.GroupBy(x => x).Where(x => x.Count() > 1).Select(x => x.Key)
+                                  ;
+
+            Console.WriteLine("Duplicates: " + string.Join(", ", duplicates));
+
+            HashSet<int> set = new HashSet<int>();
+
+            List<int> duplicate = new List<int>();
+
+            foreach (int x in array)
+            {
+                if (!set.Add(x))
+                    duplicate.Add(x);
+            }
+
+            Console.WriteLine("Duplicates: " + string.Join(", ", duplicate));
+
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    if (array[i] == array[j])
+                    {
+                        duplicate.Add(array[i]);
+
+                    }
+                }
+            }
+            Console.WriteLine("Duplicates: " + string.Join(", ", duplicate));
+
+
+            Dictionary<int, int> dup = new Dictionary<int, int>();
+
+            foreach (int x in array)
+            {
+                if (dup.ContainsKey(x))
+                {
+                    dup[x]++;
+                }
+                else
+                {
+                    dup[x] = 1;
+                }
+            }
+
+            var dupin = array.Except(array.Distinct());
+
+
+
+            List<string> list1 = new List<string>() { "Avinash", "ST" };
+
+            List<string> list2 = new List<string>() { "Avinash", "ST", "DBB" };
+
+
+        }
+
+
+
+
         public void FindDistinctandDuplicates()
         {
             int[] arr = new int[] { 1, 2, 3, 3, 4, 5, 5 };
@@ -910,6 +1202,53 @@ namespace DesignProject.Algo
         }
 
 
+        public int[] GetDistinct(int[] arr)
+        {
+            List<int> result = new List<int>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                bool isDuplicate = false;
+                for (int j = 0; j < i; j++)
+                {
+                    if (arr[i] == arr[j])
+                    {
+                        isDuplicate = true;
+                        break;
+                    }
+                }
+                if (!isDuplicate)
+                {
+                    result.Add(arr[i]);
+                }
+            }
+
+            return result.ToArray();
+        }
+            public static string ShiftCharacters(string word, int n)
+        {
+            string shiftedWord = "";
+            foreach (char c in word)
+            {
+                if (char.IsLetter(c))
+                {
+                    int shift = n % 26; // Handle shift for alphabets
+                    char newChar = (char)((char.ToLower(c) - 'a' + shift) % 26 + 'a');
+                    if (char.IsUpper(c))
+                    {
+                        newChar = char.ToUpper(newChar);
+                    }
+                    shiftedWord += newChar;
+                }
+                else
+                {
+                    shiftedWord += c; // Non-alphabetic characters remain unchanged
+                }
+            }
+            return shiftedWord;
+        }
+
+
         public void DistinctByandExceptBy()
         {
             List<object> obj = new List<object>()
@@ -925,10 +1264,10 @@ namespace DesignProject.Algo
              };
 
 
-         var distdict =   obj2.DistinctBy(x => x.GetType().GetProperty("test3"));
-          var details =  obj2.ExceptBy(obj.Select(x => x.GetType()?.GetProperty("test1")?.GetValue(x)), x => x.GetType().GetProperty("test1")?.GetValue(x));
+            var distdict = obj2.DistinctBy(x => x.GetType().GetProperty("test3"));
+            var details = obj2.ExceptBy(obj.Select(x => x.GetType()?.GetProperty("test1")?.GetValue(x)), x => x.GetType().GetProperty("test1")?.GetValue(x));
 
-            foreach(var items in distdict)
+            foreach (var items in distdict)
             {
                 Console.WriteLine(items.GetType()?.GetProperty("test1")?.GetValue(items));
             }
@@ -939,16 +1278,16 @@ namespace DesignProject.Algo
         {
             int i = 2;
 
-            if(n <= 1)
+            if (n <= 1)
             {
-               
+
                 return false;
             }
 
             while (i * i <= n)
             {
-                
-                if(n % i == 0)
+
+                if (n % i == 0)
                 {
                     return false;
                 }
@@ -961,12 +1300,12 @@ namespace DesignProject.Algo
         public void GiveListPrime(int n)
         {
 
-            bool[] primeList = new bool[n+1];
+            bool[] primeList = new bool[n + 1];
 
-            for(int i= 2; i*i <= n; i++)
+            for (int i = 2; i * i <= n; i++)
             {
 
-                for(int j= i * 2; j <= n; j += i)
+                for (int j = i * 2; j <= n; j += i)
                 {
                     if (!primeList[j])
                     {
@@ -978,10 +1317,10 @@ namespace DesignProject.Algo
 
             }
 
-            for(int i=2; i < primeList.Length; i++)
+            for (int i = 2; i < primeList.Length; i++)
             {
                 if (!primeList[i])
-                Console.WriteLine(i);
+                    Console.WriteLine(i);
             }
         }
 
@@ -990,18 +1329,18 @@ namespace DesignProject.Algo
             int start = 0;
             int end = n;
             int mid = 0;
-            while(start <= end)
+            while (start <= end)
             {
-                 mid = start + (end - start) / 2;
+                mid = start + (end - start) / 2;
 
 
-                if(mid * mid == n)
+                if (mid * mid == n)
                 {
                     Console.WriteLine(mid);
                     return;
                 }
 
-                if(mid *  mid > n)
+                if (mid * mid > n)
                 {
                     end = mid - 1;
                 }
@@ -1012,14 +1351,14 @@ namespace DesignProject.Algo
             }
 
 
-          
+
 
             double incr = 0.1f;
 
             double root = start;
-            for(int i =0; i < p; i++)
+            for (int i = 0; i < p; i++)
             {
-                while(root * root <= n)
+                while (root * root <= n)
                 {
                     root += incr;
                 }
@@ -1031,7 +1370,181 @@ namespace DesignProject.Algo
         }
 
 
+
+        public void findDataInGivenArray()
+        {
+            int[] arr1 = new int[] { 1, 3, 5, 6, };
+
+            int[] arr2 = new int[] { 8, 4, 5, 6, 2 };
+
+            if (arr1.Sum() > arr2.Sum())
+            {
+                Console.WriteLine("-1");
+                return;
+            }
+
+            int ndstart = 0;
+
+            var listArr = arr1.ToList();
+
+            int start = 0;
+            int end = arr1.Length - 1;
+
+
+            ArraySegment<int> arr4 = new ArraySegment<int>(arr1, 0, arr1.Length - 4);
+            ArraySegment<int> arr5 = new ArraySegment<int>(arr1, 0, arr1.Length - 4);
+
+
+
+            while (start < end)
+            {
+
+                int sum = arr1[start] + arr1[end];
+
+                if (sum == arr2[ndstart] || arr1[start] == arr2[ndstart] || arr1[end] == arr2[ndstart])
+                {
+
+                    listArr.Remove(arr1[start]);
+                    listArr.Remove(arr1[end]);
+
+
+                    arr1 = listArr.ToArray();
+
+                    ndstart++;
+
+                    start = 0;
+                    end = arr1.Length - 1;
+                    continue;
+                }
+                if (arr2[ndstart] > sum)
+                {
+                    start++;
+                }
+                else
+                {
+                    end--;
+                }
+
+            }
+
+
+
+
+
+
+
+        }
+
+
+
+        interface ICovariant<out T>
+        {
+            T GetItem();
+        }
+
+        class Animal { }
+        class Dog : Animal { }
+
+        class CovariantExample : ICovariant<Dog>
+        {
+            public Dog GetItem() => new Dog();
+        }
+
+        class Program
+        {
+            static void Main()
+            {
+                ICovariant<Dog> dogProvider = new CovariantExample();
+                ICovariant<Animal> animalProvider = dogProvider; // Covariance: Dog → Animal
+                Animal animal = animalProvider.GetItem();
+                Console.WriteLine(animal.GetType().Name); // Output: Dog
+                IEnumerable<string> test = default;
+
+                IEnumerable<object> test2 = test;
+
+                void GetResult(object ocj)
+                {
+
+                }
+
+                Action<string> obj = GetResult;
+
+
+            }
+        }
+
+        delegate void AnimalDelegate(Animal animal);
+        interface IContravariant<in T>
+        {
+            void SetItem(T item);
+        }
+
+        class Animal1 { }
+        class Dog1 : Animal1 { }
+
+        class ContravariantExample : IContravariant<Animal1>
+        {
+            public void SetItem(Animal1 item) => Console.WriteLine(item.GetType().Name);
+        }
+
+        class Program2
+        {
+            static void ProcessAnimal(Animal animal) => Console.WriteLine("Processing animal");
+
+            static void ProcessDog(Dog dog) => Console.WriteLine("Processing dog");
+
+            static void Main()
+            {
+                static void SetObject(object o) { }
+                Action<Animal> actObject = SetObject;
+                // An object that is instantiated with a more derived type argument
+                // is assigned to an object instantiated with a less derived type argument.
+                // Assignment compatibility is preserved.
+                Action<Dog> actString = actObject;
+
+                IContravariant<Animal1> animalSetter = new ContravariantExample();
+                IContravariant<Dog1> dogSetter = animalSetter; // Contravariance: Animal → Dog
+                dogSetter.SetItem(new Dog1()); // Output: Dog
+            }
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+        public void GetCommonList(List<int> list1, List<int> list2)
+        {
+
+
+            var commonList = new List<int>();
+
+            for (int i = 0; i < list1.Count; i++)
+            {
+
+
+                for (int j = 0; j < list2.Count; j++)
+                {
+                    if (list1[i] == list2[j])
+                    {
+                        commonList.Add(list1[i]);
+                    }
+                }
+
+
+
+            }
+
+            Console.WriteLine("Common Elements are:" + string.Join(" ", commonList.Distinct()));
+        }
+
     }
-    }
+}
 
 

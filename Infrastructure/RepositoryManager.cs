@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Infrastructure
@@ -21,6 +22,8 @@ namespace Infrastructure
             _repository = new Lazy<ITeacherRepository>(() => new TeacherRepository(dBContext));
             _unitOfWork = new Lazy<IUnitOfWork>(() => new  UnitOfWork(dBContext));
         }
+
+       
         public ITeacherRepository teacherRepository => _repository.Value;
         public IUnitOfWork unitOfWork => _unitOfWork.Value;
     }

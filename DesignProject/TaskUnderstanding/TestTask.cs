@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Channels;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace DesignProject.TaskUnderstanding
 {
@@ -31,38 +27,7 @@ namespace DesignProject.TaskUnderstanding
         }
 
 
-        public async Task TestTasks()
-        {
-
-            Stopwatch st = new Stopwatch();
-
-            st.Start();
-            var result2 =  GetValues2().Result;
-            st.Stop();
-
-            Console.WriteLine(st.ElapsedMilliseconds);
-
-
-            st.Reset();
-            st.Start();
-            var result3 = await GetValues2();
-            st.Stop();
-
-            Console.WriteLine(st.ElapsedMilliseconds);
-
-            st.Reset();
-            st.Start();
-            GetValues3();
-            st.Stop();
-
-
-            Console.WriteLine(st.ElapsedMilliseconds);
-
-            var result = await GetValues();
-
-            Console.WriteLine("Tasks finished");
-
-        }
+      
 
 
         public void GetResult()
@@ -94,7 +59,7 @@ namespace DesignProject.TaskUnderstanding
                 Task<int> downloading = DownloadDocsMainPageAsync();
                 Console.WriteLine($"{nameof(Awaitable)}: Launched downloading.");
 
-                int bytesLoaded = await downloading;
+                int bytesLoaded =   await downloading;
                 Console.WriteLine($"{nameof(Awaitable)}: Downloaded {bytesLoaded} bytes.");
             }
 
@@ -103,11 +68,11 @@ namespace DesignProject.TaskUnderstanding
             {
                 Console.WriteLine($"{nameof(DownloadDocsMainPageAsync)}: About to start downloading.");
 
-                var client = new HttpClient();
-                byte[] content = await client.GetByteArrayAsync("https://learn.microsoft.com/en-us/");
+//                var client = new HttpClient();
+//                byte[] content = await client.GetByteArrayAsync("https://learn.microsoft.com/en-us/");
 
                 Console.WriteLine($"{nameof(DownloadDocsMainPageAsync)}: Finished downloading.");
-                return content.Length;
+                return 0;
             }
 
 

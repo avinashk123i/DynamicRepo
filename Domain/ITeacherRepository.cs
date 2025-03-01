@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public interface ITeacherRepository : IBaseRepository<Teacher>
+    public interface ITeacherRepository 
     {
         Task<IEnumerable<Teacher>> GetAllTeachersAsync();
         Task<IEnumerable<Teacher>> GetTeacherByRollNumber(int rollNumber);

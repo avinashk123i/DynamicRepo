@@ -43,9 +43,9 @@ namespace Infrastructure
             return _dbContext.Set<T>().AsNoTracking();
         }
 
-        public IQueryable<T> GetByCondition(Expression<Func<T, bool>> expression)
+        public IQueryable<T> GetByCondition(Func<T, bool> expression)
         {
-            return _dbContext.Set<T>().Where(expression).AsNoTracking();
+            return _dbContext.Set<T>().Where(expression).AsQueryable().AsNoTracking();
         }
 
         public void Update(T Entity)

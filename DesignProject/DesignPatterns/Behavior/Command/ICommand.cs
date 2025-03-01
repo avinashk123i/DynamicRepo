@@ -8,6 +8,6 @@ namespace DesignProject.DesignPatterns.Behavior.Command
 {
     public interface ICommand
     {
-        public void Execute();
+       public void Execute();
     }
 }

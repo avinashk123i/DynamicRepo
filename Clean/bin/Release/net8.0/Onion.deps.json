@@ -11,6 +11,7 @@
           "Domain": "1.0.0",
           "Infrastructure": "1.0.0",
           "Microsoft.EntityFrameworkCore.InMemory": "8.0.11",
+          "Presentation": "1.0.0",
           "Service": "1.0.0",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
@@ -727,8 +728,7 @@
       "Infrastructure/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore.InMemory": "8.0.11",
-          "Presentation": "1.0.0"
+          "Microsoft.EntityFrameworkCore.InMemory": "8.0.11"
         },
         "runtime": {
           "Infrastructure.dll": {}

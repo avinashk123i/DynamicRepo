@@ -19,13 +19,18 @@ namespace DesignProject.DesignPatterns.Behavior.State
             this.state = state;
         }
 
+        public void Handle()
+        {
+            this.state.handle();
+        }
+
     }
 
     public interface Istate
     {
         public void handle();
 
-        public void SetNextState(Order order);
+        
     }
 
 

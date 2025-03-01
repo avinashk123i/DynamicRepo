@@ -24,7 +24,7 @@ builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
 builder.Services.AddScoped<IServiceManager, ServiceManager>();
 
 // Adding this here so we can add the controllers which are defined inside another class library project #Most Important step.
-var refrensingAssembly = typeof(WeatherForecastController).Assembly;
+ var refrensingAssembly = typeof(WeatherForecastController).Assembly;
 builder.Services.AddControllers().AddApplicationPart(refrensingAssembly);
 
 var app = builder.Build();

@@ -8,11 +8,13 @@ namespace DesignProject.Builder
 {
     public interface Ibuilder
     {
-        public Builder PersonWithAddress(string address);
+        public Ibuilder PersonWithAddress(string address);
 
-        public Builder PersonWithId(int Id);
+        public Ibuilder PersonWithId(int Id);
 
-        public Builder PersonWithAge(int age);
+        public Ibuilder PersonWithAge(int age);
+
+        public Builder Build();
 
     }
 }

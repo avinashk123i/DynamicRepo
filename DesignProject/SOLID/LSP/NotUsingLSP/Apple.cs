@@ -25,7 +25,6 @@ namespace DesignProject.SOLID.LSP.NotUsingLSP
         }
         public string data()
         {
-            Orange ap = new Apple();
            // ap.GetColor();
 
             return string.Empty;

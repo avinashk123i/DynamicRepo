@@ -16,7 +16,7 @@ namespace Service
         public async Task CreateTeacher(TeacherDTO teacher)
         {
 
-            _repositoryManager.teacherRepository.Create(new Teacher()
+            _repositoryManager.teacherRepository.CreateTeacher(new Teacher()
             {
                 Name = teacher?.TeacherName ?? string.Empty
             });

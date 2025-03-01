@@ -12,24 +12,80 @@ using DesignProject.DesignPatterns.Creational.Prototype;
 using DesignProject.DesignPatterns.Structural.Composite;
 using DesignProject.SampleDeadlock;
 using DesignProject.TaskUnderstanding;
+using System.Net.WebSockets;
+using File = DesignProject.DesignPatterns.Structural.Composite.File;
+
+
+
+
+
+Class1 c = new Class1();
+
+c.GetFrequency("Patient has sever headache, every 20 mins & vomiting 3-4 times!");
+
+
+FiveHundredNoteDispenser dispenser1 = new FiveHundredNoteDispenser();
+TwoHundredNoteDispenser dispenser2 = new TwoHundredNoteDispenser();
+
+dispenser1.SetNext(dispenser2);
+dispenser2.SetNext(new HundredNoteDispenser());
+
+dispenser1.DispenseCash(5200);
+
+File file1 = new File("System.txt");
+File file2 = new File("Advancedata.txt");
+
+Folder folder = new Folder("Root");
+Folder subfolder = new Folder("SubFolder");
+
+folder.add(subfolder);
+subfolder.add(file1);
+subfolder.add(file2);
+
+
+folder.Display();
+
+
+
 
 TestTask ts = new TestTask();
 
 await ts.Awaitable();
 
-Common common = new Common();
 
-common.GiveListPrime(10);
+
+
+
+Common common = new Common();
+common.GetCommonList(new List<int>() { 1, 2, 2, 3 }, new List<int>() { 2, 3, 4 });
+
+
+
+
+
+
+
+
+
+
+
+common.GetDistinct(new int[] { 1, 2, 2, 2, 3, 3, 3, 4, 5 });
+var dd = common.PrintFibo(4);
+common.MergeSort(new int[] { 1, 5, 2, 3, 7 });
+common.findDataInGivenArray();
 common.DistinctByandExceptBy();
 
 
+common.GiveListPrime(10);
+
+common.SelectionSort();
 Console.WriteLine("Hello, World!");
 
 DapperContext dapperContext = new DapperContext();
 
 dapperContext.GetValues();
 
-ClientCodeNew(new ConcreteCreatorA());
+ClientCodeNew(new RoadTransport());
 
 Person person = new Person();
 
@@ -42,20 +98,33 @@ person.student = new Student(4);
 //History hs = new History(subject);
 //hs.Backup();
 
+#region Algo
+
+common.DifferentwaysForDuplicates();
+common.ReverseWithDiff();
+common.RotateArray(3);
+common.ReverseNumber(132);
 common.GetFibonicciSeries(10);
 common.GetNthFibonicciNumber(5);
 common.SwapWithoutTemp(1, 2);
 common.CountOccurence(3, 1383339);
-common.ReverseNumber(13839);
+
 common.Array2Dimensional();
 common.Reverse2DArray(new int[,] { { 1, 2, 3 }, { 2, 3, 1 } });
-common.Reverse3DArray(new int[,,] { { {1,2 }, {3,4 } }, { {2,5 }, {6,7 } } });
+common.Reverse3DArray();
+
+var arr2 = new int[2][]
+{
+    new int[]{1,2,3,4},
+    new int[]{2,3}
+};
+
 common.JaggedArray();
 common.FindMax(new int[] { 1, 2, 3, 5, 6, 7 });
 common.CountEvenIntegers();
 common.ReverseArrayWithDiffTeq();
 common.BinarySearch(25);
-common.FindCielingOrFloor(6,false);
+common.FindCielingOrFloor(6, false);
 common.FindCielingOrFloorOfCharacter('d', true);
 common.FindInMountainArray(4);
 common.FindPeakInCircularArray();
@@ -64,11 +133,10 @@ common.FindIn2DArrayBinarySearch(8);
 common.BubbleSort();
 common.CreatePatterns();
 common.CyclicSort();
-var dd = common.PrintFibo(4);
 
 int[] arr = new int[] { 2, 3, 4, 5, 6, 7, 8 };
-int mid =  common.RecursiveBinarySearch(6,0,arr.Length -1 , arr);
-
+int mid = common.RecursiveBinarySearch(6, 0, arr.Length - 1, arr);
+#endregion
 
 
 Person p2 = person.ShallowClone();
@@ -77,12 +145,6 @@ person.Id = 3;
 person.name = "test3";
 person.student = new Student(4);
 
-AuthenticationHandler au = new AuthenticationHandler();
-AuthorizationHandler at = new AuthorizationHandler();
-au.SetNext(at);
-
-var requests = "au";
-au.Handle(requests);
 
 Request request = new Request();
 
@@ -92,7 +154,6 @@ request.Message = "text";
 
 TestTask task = new TestTask();
 
-await task.TestTasks();
 
 await
     task.Awaitable();
@@ -100,7 +161,7 @@ await
 
 task.GetResult();
 
-var prop = new Property(new string[] {"Avi", "kumar"});
+var prop = new Property(new string[] { "Avi", "kumar" });
 
 var enumerator = prop.GetEnumerator();
 
@@ -113,7 +174,7 @@ while (enumerator.MoveNext())
 
 DeadLock dl = new DeadLock();
 
- dl.taskall();
+dl.taskall();
 
 
 Subject subject = new Subject();
@@ -127,27 +188,10 @@ subject.text = "Bcd";
 subject.RestoreState(history.RestoreState());
 Console.WriteLine(subject.text);
 
-Client client = new Client();
-
-Composite tree = new Composite();
-
 
 Observer ob = new Observer();
 
 ob.TestEvent();
-
-
-Leaf leaf = new Leaf();
-client.DoOperation1(leaf);
-Composite branch = new Composite();
-Composite branch2 = new Composite();
-branch2.Add(new Leaf());
-branch.Add(new Leaf());
-branch.Add(new Leaf());
-
-tree.Add(branch);
-tree.Add(branch2);
-client.DoOperation1(tree);
 
 
 
@@ -169,6 +213,9 @@ Console.WriteLine(p4.name);
 
 Console.WriteLine(p5.name);
 
+
+
+
 Director director = new Director();
 ConcreteBuilder builder = new ConcreteBuilder();
 director.builder = builder;
@@ -184,7 +231,7 @@ Console.WriteLine(person.Id + " " + p2.Id + "" + person.name + p2.name);
 
 
 
-void ClientCodeNew(CreatorNew creator)
+void ClientCodeNew(Transport creator)
 {
-    creator.getProduct().Operation();
+    creator.GetLogistics().Deliver();
 }

@@ -10,9 +10,9 @@ namespace Domain
     public interface IBaseRepository<T>
     {
         IQueryable<T> GetAll();
-        IQueryable<T> GetByCondition(Expression<Func<T, bool>> expression);
+        IQueryable<T> GetByCondition(Func<T, bool> expression);
         void Create(T Entity);
-        void Update(T Entity);
+        void Update(T Entity); 
         void Delete(T Entity);
     }
 }

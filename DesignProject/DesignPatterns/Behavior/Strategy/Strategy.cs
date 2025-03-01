@@ -10,10 +10,7 @@ namespace DesignProject.DesignPatterns.Behavior.Strategy
     {
         public IContext _state;
 
-        public Strategy()
-        {
-            
-        }
+       
         public Strategy(IContext state)
         {
             _state = state;

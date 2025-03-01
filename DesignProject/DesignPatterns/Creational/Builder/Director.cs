@@ -8,17 +8,13 @@ namespace DesignProject.Builder
 {
     public class Director
     {
-        private Ibuilder _builder;
-
+   
         public Ibuilder builder
-        { set { _builder = value; } }
+        { get; set; }
 
         public void BuildFullPerson()
         {
-            _builder.PersonWithAddress("Address");
-            _builder.PersonWithId(1);
-            _builder.PersonWithAge(11);
-           
+            this.builder.PersonWithAddress("Address").PersonWithId(1).PersonWithAge(23).Build();  
         }
     }
 }

@@ -8,8 +8,10 @@ namespace DesignProject.DesignPatterns.Behavior.ChainOfResponsiblity
 {
     public interface IHandler
     {
-        public void SetNext(IHandler next);
+        public void DispenseCash(int cash);
 
-        public void Handle(object request);
+        public void SetNext(IHandler handler);
+
+
     }
 }

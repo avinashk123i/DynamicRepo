@@ -9,10 +9,8 @@ namespace DesignProject.DesignPatterns.Behavior.Iterator
 {
     public class PropertyEnumerator : IEnumerator
     {
-
         private string[] Props { get; set; }
         private int index = -1;
-
 
         public PropertyEnumerator(string[] props)
         {

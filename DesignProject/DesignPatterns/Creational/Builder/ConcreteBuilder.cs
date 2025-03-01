@@ -3,19 +3,22 @@
     public class ConcreteBuilder : Ibuilder
     {
         Builder person = new Builder();
-        public Builder PersonWithAddress(string address)
+        public Ibuilder PersonWithAddress(string address)
         {
-            person.Address = address; return person;
+            person.Address = address; 
+            return this;
         }
 
-        public Builder PersonWithAge(int age)
+        public Ibuilder PersonWithAge(int age)
         {
-            person.Age = age; return person;
+            person.Age = age;
+            return this;
         }
 
-        public Builder PersonWithId(int Id)
+        public Ibuilder PersonWithId(int Id)
         {
-            person.Id = Id; return person;
+            person.Id = Id; 
+            return this;
         }
 
         public Builder Build()
